@@ -8,7 +8,7 @@ WHERE tipo = 'hotel' AND ativo = 1;
 SELECT
 	cliente_id,
     ROUND (AVG (preco_total),2) AS 'ticket medio'
-FROM alugueis
+FROM reservas
 GROUP BY cliente_id;   
 
 -- Verificação da medida de estadia 
@@ -16,7 +16,7 @@ GROUP BY cliente_id;
 SELECT 
 	cliente_id,
     AVG(DATEDIFF(data_fim,data_inicio)) AS  media_dias_estadia
-FROM alugueis
+FROM reservas
 GROUP BY cliente_id
 ORDER BY media_dias_estadia DESC;
 
@@ -47,7 +47,7 @@ ORDER BY total_hospedagens_inativas DESC;
 SELECT 
 	YEAR(data_inicio) AS ano, 
     MONTH(data_inicio) AS mes,
-    COUNT(*) AS total_alugueis
-FROM alugueis 
+    COUNT(*) AS total_reservas
+FROM reservas 
 GROUP BY ano, mes
-ORDER BY total_alugueis DESC;
+ORDER BY total_reservas DESC;
