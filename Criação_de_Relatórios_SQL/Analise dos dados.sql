@@ -41,3 +41,13 @@ JOIN hospedagens h
 WHERE h.ativo = 0
 GROUP BY p.nome
 ORDER BY total_hospedagens_inativas DESC;
+
+
+-- Datas de reservas 
+SELECT 
+	YEAR(data_inicio) AS ano, 
+    MONTH(data_inicio) AS mes,
+    COUNT(*) AS total_alugueis
+FROM alugueis 
+GROUP BY ano, mes
+ORDER BY total_alugueis DESC;
