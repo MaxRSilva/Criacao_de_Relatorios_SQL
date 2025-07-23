@@ -6,5 +6,11 @@ UPDATE proprietarios
 SET contato = 'daniela_120@gmail.com'
 WHERE proprietario_id = '1009';
 
-SELECT*
-FROM proprietarios
+DELETE FROM reservas
+WHERE hospedagem_id IN ('10000', '1001');
+
+DELETE FROM avaliacoes
+WHERE hospedagem_id IN ('10000', '1001');
+
+DELETE FROM hospedagens
+WHERE hospedagem_id IN ('10000', '1001');
