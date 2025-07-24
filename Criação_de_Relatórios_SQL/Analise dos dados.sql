@@ -51,3 +51,7 @@ SELECT
 FROM reservas 
 GROUP BY ano, mes
 ORDER BY total_reservas DESC;
+
+
+SELECT*
+FROM hospedagens;
