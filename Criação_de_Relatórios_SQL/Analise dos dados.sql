@@ -52,6 +52,10 @@ FROM reservas
 GROUP BY ano, mes
 ORDER BY total_reservas DESC;
 
-
-SELECT*
-FROM hospedagens;
+SELECT	
+	r.hospedagem_id,
+    c.nome,
+    r.preco_total
+FROM reservas r 
+JOIN clientes c
+	ON r.cliente_id = c.cliente_id;
